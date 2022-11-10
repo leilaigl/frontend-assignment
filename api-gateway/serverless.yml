@@ -1,0 +1,16 @@
+service: frontend-assignment-api-gateway
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  app-api:
+    handler: handler.handler
+    events:
+      - http:
+          path: /trips
+          method: get
+          cors: true
